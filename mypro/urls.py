@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tripweb/addpost',views.CurdApi.as_view({"post":"addpost"})),
+    path('tripweb/get',views.CurdApi.as_view({"get":"get"})),
+    path('tripweb/delete/<int:id>',views.CurdApi.as_view({"delete":"deleterecords"})),
 ]

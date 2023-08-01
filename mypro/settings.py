@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-48meom7i*8-fjw%2#xh5pnak09@5bm77=p_7v8-3@m)e^&zubg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'myapp',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +80,12 @@ WSGI_APPLICATION = 'mypro.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'snehasis',
+        'USER': 'postgres',
+        'PASSWORD': 'Snehasis@123',
+        'HOST': '13.127.28.250',
+        'PORT': '5432',
     }
 }
 
